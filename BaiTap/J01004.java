@@ -9,7 +9,7 @@ Output:
 - "YES" nếu số nguyên tố, "NO" nếu không
 
 Luồng xử lý:
-1. Main -> Gọi XuLyBaiToan
+1. Main -> Gọi XuLyBaiToanJ01004
 2. XuLyBaiToan -> Đọc input
 3. XetSoNguyenTo -> Kiểm tra số nguyên tố
 4. XuLyBaiToan -> In kết quả
@@ -36,7 +36,7 @@ class XetSoNguyenTo {
     }
 }
 
-class XuLyBaiToan {
+class XuLyBaiToanJ01004 {
     public void thucThi(Scanner sc) {
         int boTest = sc.nextInt();
         for (int i = 0; i < boTest; i++) {
@@ -50,7 +50,7 @@ class XuLyBaiToan {
 public class J01004 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        new XuLyBaiToan().thucThi(sc);
+        new XuLyBaiToanJ01004().thucThi(sc);
         sc.close();
     }
 }
