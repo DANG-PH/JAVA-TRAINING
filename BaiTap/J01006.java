@@ -23,12 +23,12 @@ class XuLySoFibo {
     public XuLySoFibo(int chiSo) {
         this.chiSo = chiSo;
     }
-    public int tinhSoFibo() {
+    public long tinhSoFibo() {
         if (chiSo == 1 || chiSo == 2) return 1;
         else {
-            int a = 1,b = 1;
+            long a = 1,b = 1;
             for (int i = 0; i < chiSo-2; i++) {
-                int bienTam = b;
+                long bienTam = b;
                 b += a;
                 a = bienTam;
             }
