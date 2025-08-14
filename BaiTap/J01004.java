@@ -8,9 +8,9 @@ Input:
 Output:
 - "YES" nếu số nguyên tố, "NO" nếu không
 
-Luồng xử lý:
+Luồng xử lý (OOP):
 1. Main -> Gọi XuLyBaiToanJ01004
-2. XuLyBaiToan -> Đọc input
+2. XuLyBaiToan -> Đọc inputf
 3. XetSoNguyenTo -> Kiểm tra số nguyên tố
 4. XuLyBaiToan -> In kết quả
 */

@@ -10,7 +10,7 @@ Output:
 - "VN" nếu phương trình vô nghiệm
 - Nghiệm x (2 chữ số thập phân) nếu có nghiệm duy nhất
 
-Luồng xử lý:
+Luồng xử lý (OOP):
 1. Main -> Gọi XuLyBaiToanJ01003
 2. XuLyBaiToan -> Đọc input
 3. PhuongTrinhBacNhat -> Giải phương trình
