@@ -55,14 +55,29 @@ class XetXau {
         }
         return dem;
     }
+    public char kyTuHienTai(int index) {
+        return xauCanXet.charAt(index);
+    }
+    public int doDai() {
+        return xauCanXet.length();
+    }
 }
 
-class DemSoMayMan {
+class SoMayMan {
     public boolean laSoMayMan(XetXau xau,char kytu1, char kytu2) {
         int so4 = xau.demKyTuTrongXau(kytu1);
         int so7 = xau.demKyTuTrongXau(kytu2);
         int tong = so4 + so7;
         return (tong == (kytu1 - '0') || tong == (kytu2 - '0'));
+    }
+    public boolean laSoLienKe(XetXau xau) {
+        for (int i = 0; i < xau.doDai() - 1; i++) {
+            int hieu = Math.abs(xau.kyTuHienTai(i+1) - xau.kyTuHienTai(i));
+            if (hieu != 1) {
+                return false;
+            }
+        }
+        return true;
     }
 }
 
@@ -70,7 +85,7 @@ class XuLyBaiToanJ01016 {
     public void thucThi(Scanner sc) {
         String a = sc.next();
         XetXau xuliXau = new XetXau(a);
-        DemSoMayMan checker = new DemSoMayMan();
+        SoMayMan checker = new SoMayMan();
 
         String ketQua = checker.laSoMayMan(xuliXau,'4','7') ? "YES" : "NO";
         inKetQua(ketQua);
