@@ -50,6 +50,14 @@ class CapSoNguyenTo {
     private int soNguyenTo;
     private int mu;
 
+    public int getSoNguyenTo() {
+        return soNguyenTo;
+    }
+
+    public int getMu() {
+        return mu;
+    }
+
     public CapSoNguyenTo(int soNguyenTo, int mu) {
         this.soNguyenTo = soNguyenTo;
         this.mu = mu;
