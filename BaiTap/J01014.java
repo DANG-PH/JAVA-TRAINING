@@ -1,7 +1,7 @@
 import java.util.*;
 
 /*
-Bài: J01014 - Tìm ước số nguyên tố lớn nhất của N
+Bài: J01014 - ƯỚC SỐ NGUYÊN TỐ LỚN NHẤT
 Input:
 - Dòng 1: Số bộ test T (1 ≤ T ≤ 100)
 - Mỗi test: Một số nguyên dương N (2 ≤ N ≤ 10^10)

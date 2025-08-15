@@ -1,7 +1,7 @@
 import java.util.*;
 
 /*
-Bài: J01009 - Tính tổng giai thừa
+Bài: J01009 - TỔNG GIAI THỪA
 Input:
 - Một số nguyên n (1 ≤ n ≤ 20)
 

@@ -68,7 +68,7 @@ class XuLyBaiToanJ01017 {
             XetXau xuliXau = new XetXau(a);
             SoMayMan checker = new SoMayMan();
 
-            String ketQua = checker.laSoLienKe(xuliXau) ? "YES" : "NO";
+            String ketQua = checker.laSoLienKe(xuliXau,1) ? "YES" : "NO";
             inKetQua(ketQua);
         }
     }

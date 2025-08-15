@@ -1,7 +1,7 @@
 import java.util.*;
 
 /*
-Bài: J01011 - Tính GCD và LCM
+Bài: J01011 - BỘI SỐ CHUNG - ƯỚC SỐ CHUNG
 Input:
 - Dòng 1: Số bộ test T (1 ≤ T ≤ 100)
 - Mỗi bộ test: Hai số nguyên dương a và b (1 ≤ a, b ≤ 10^9)

@@ -1,7 +1,7 @@
 import java.util.*;
 
 /*
-Bài: J01012 - Đếm số ước chẵn của một số
+Bài: J01012 - ƯỚC SỐ CHIA HẾT CHO 2
 Input:
 - Dòng 1: Số bộ test T (1 ≤ T ≤ 100)
 - Mỗi bộ test: Một số nguyên dương a (1 ≤ a ≤ 10^9)

@@ -1,7 +1,7 @@
 import java.util.*;
 
 /*
-Bài: J01013 - Tính tổng tích số nguyên tố * số mũ
+Bài: J01013 - TỔNG ƯỚC SỐ - 1
 Input:
 - Dòng 1: Số bộ test T (1 ≤ T ≤ 100)
 - Mỗi test: Một số nguyên dương a (2 ≤ a ≤ 10^9)

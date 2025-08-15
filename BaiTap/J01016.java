@@ -1,7 +1,7 @@
 import java.util.*;
 
 /*
-Bài: J01016 - Số may mắn
+Bài: J01016 - CHỮ SỐ 4 VÀ CHỮ SỐ 7
 Input:
 - Dòng 1: Chuỗi số nguyên dương a (1 ≤ length(a) ≤ 100)
 
@@ -61,6 +61,13 @@ class XetXau {
     public int doDai() {
         return xauCanXet.length();
     }
+    public int tongChuSo() {
+        int sum = 0;
+        for (char c : xauCanXet.toCharArray()) {
+            sum += c - '0';
+        }
+        return sum;
+    }
 }
 
 class SoMayMan {
@@ -70,10 +77,10 @@ class SoMayMan {
         int tong = so4 + so7;
         return (tong == (kytu1 - '0') || tong == (kytu2 - '0'));
     }
-    public boolean laSoLienKe(XetXau xau) {
+    public boolean laSoLienKe(XetXau xau,int khoangCach) {
         for (int i = 0; i < xau.doDai() - 1; i++) {
             int hieu = Math.abs(xau.kyTuHienTai(i+1) - xau.kyTuHienTai(i));
-            if (hieu != 1) {
+            if (hieu != khoangCach) {
                 return false;
             }
         }
