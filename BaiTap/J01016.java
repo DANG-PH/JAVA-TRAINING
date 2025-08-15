@@ -1,0 +1,90 @@
+import java.util.*;
+
+/*
+Bài: J01016 - Số may mắn
+Input:
+- Dòng 1: Chuỗi số nguyên dương a (1 ≤ length(a) ≤ 100)
+
+Output:
+- "YES" nếu tổng số ký tự '4' và '7' trong a bằng 4 hoặc 7
+- "NO" nếu không thỏa
+
+Luồng xử lý (OOP):
+
+1. Main -> Gọi XuLyBaiToanJ01016
+
+2. XuLyBaiToanJ01016:
+   - Đọc chuỗi số từ Scanner
+   - Tạo đối tượng XetXau (chứa chuỗi cần xét)
+   - Tạo đối tượng DemSoMayMan (chứa logic kiểm tra)
+   - Gọi phương thức laSoMayMan(xuliXau, '4', '7')
+   - In "YES" nếu đúng, ngược lại in "NO"
+
+3. === Các class chức năng ===
+
+   - **XetXau**:
+     - Chứa dữ liệu chuỗi cần xét (xauCanXet)
+     - Phương thức demKyTuTrongXau(char kyTu): đếm số lần xuất hiện của ký tự
+     - Tách riêng xử lý chuỗi → có thể tái sử dụng cho bài toán chuỗi khác
+
+   - **DemSoMayMan**:
+     - Nhận 1 XetXau và 2 ký tự may mắn
+     - Kiểm tra tổng số lần xuất hiện 2 ký tự này
+     - Trả về true nếu tổng == giá trị số của ký tự 1 hoặc ký tự 2
+     - Tách riêng logic kiểm tra → dễ thay đổi tiêu chí "số may mắn"
+
+4. Ưu điểm OOP:
+   - **Tách biệt nhiệm vụ**:
+     + XetXau → xử lý chuỗi
+     + DemSoMayMan → kiểm tra số may mắn
+     + XuLyBaiToan → điều phối input/output
+   - **Tái sử dụng**: XetXau có thể dùng cho các bài khác; DemSoMayMan dùng cho nhiều kiểu ký tự may mắn
+   - **Mở rộng dễ dàng**: Muốn thay ký tự may mắn chỉ cần đổi tham số khi gọi hàm, không sửa code lõi
+   - **Code rõ ràng, dễ đọc, dễ bảo trì**
+*/
+
+class XetXau {
+    private final String xauCanXet;
+    public XetXau(String xauCanXet) {
+        this.xauCanXet = xauCanXet;
+    }
+    public int demKyTuTrongXau(char kyTu) {
+        int dem = 0;
+        for (char kt : xauCanXet.toCharArray()) {
+            if (kt == kyTu) dem ++;
+        }
+        return dem;
+    }
+}
+
+class DemSoMayMan {
+    public boolean laSoMayMan(XetXau xau,char kytu1, char kytu2) {
+        int so4 = xau.demKyTuTrongXau(kytu1);
+        int so7 = xau.demKyTuTrongXau(kytu2);
+        int tong = so4 + so7;
+        return (tong == (kytu1 - '0') || tong == (kytu2 - '0'));
+    }
+}
+
+class XuLyBaiToanJ01016 {
+    public void thucThi(Scanner sc) {
+        String a = sc.next();
+        XetXau xuliXau = new XetXau(a);
+        DemSoMayMan checker = new DemSoMayMan();
+
+        String ketQua = checker.laSoMayMan(xuliXau,'4','7') ? "YES" : "NO";
+        inKetQua(ketQua);
+    }
+
+    private void inKetQua(String ketQua) {
+        System.out.println(ketQua);
+    }
+}
+
+public class J01016 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        new XuLyBaiToanJ01016().thucThi(sc);
+        sc.close();
+    }
+}

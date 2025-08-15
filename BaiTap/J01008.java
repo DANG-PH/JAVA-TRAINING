@@ -21,7 +21,7 @@ Luồng xử lý (OOP):
 */
 
 class PhanTichSoNguyenTo {
-    private long soCanXet;
+    private final long soCanXet;
 
     public PhanTichSoNguyenTo(long soCanXet) {
         this.soCanXet = soCanXet;
@@ -29,28 +29,43 @@ class PhanTichSoNguyenTo {
 
     public List<CapSoNguyenTo> phanTichThuaSoNguyenTo() {
         List<CapSoNguyenTo> cacCap = new ArrayList<>();
-        for (int i = 2; i <= Math.sqrt(soCanXet); i++) { // tối ưu không dùng sqrt
+        long n = soCanXet;
+
+        for (long i = 2; i * i <= n; i++) {
             int chiSo = 0;
-            while (soCanXet % i == 0) {
+            while (n % i == 0) {
                 chiSo++;
-                soCanXet /= i;
+                n /= i;
             }
-            if (chiSo >= 1) {
+            if (chiSo > 0) {
                 cacCap.add(new CapSoNguyenTo(i, chiSo));
             }
         }
-        if (soCanXet > 1) {
-            cacCap.add(new CapSoNguyenTo((int) soCanXet, 1));
+        if (n > 1) {
+            cacCap.add(new CapSoNguyenTo((int) n, 1));
         }
         return cacCap;
+    }
+
+    public long layUocSoNguyenToLonNhat() {
+        long n = soCanXet;
+        long maxUT = -1;
+        for (long i = 2; i * i <= n; i++) {
+            while (n % i == 0) {
+                maxUT = i;
+                n /= i;
+            }
+        }
+        if (n > 1) maxUT = n;
+        return maxUT;
     }
 }
 
 class CapSoNguyenTo {
-    private int soNguyenTo;
+    private long soNguyenTo;
     private int mu;
 
-    public int getSoNguyenTo() {
+    public long getSoNguyenTo() {
         return soNguyenTo;
     }
 
@@ -58,7 +73,7 @@ class CapSoNguyenTo {
         return mu;
     }
 
-    public CapSoNguyenTo(int soNguyenTo, int mu) {
+    public CapSoNguyenTo(long soNguyenTo, int mu) {
         this.soNguyenTo = soNguyenTo;
         this.mu = mu;
     }
