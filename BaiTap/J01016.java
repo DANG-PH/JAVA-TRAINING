@@ -71,6 +71,22 @@ class XetXau {
     public String traVeXau() {
         return xauCanXet;
     }
+    public String[] chiaDoiXau() {
+        if (xauCanXet.length()%2==0) {
+            return new String[] {xauCanXet.substring(0,xauCanXet.length()/2), xauCanXet.substring(xauCanXet.length()/2)};
+        } else {
+            return new String[] {xauCanXet.substring(0,(xauCanXet.length()-1)/2), xauCanXet.substring((xauCanXet.length()+1)/2)};
+        }
+    }
+    public String daoNguocXau() {
+        char[] mangKyTu = xauCanXet.toCharArray();
+        for (int i = 0;i < mangKyTu.length/2; i++) {
+            char tmp = mangKyTu[i];
+            mangKyTu[i] = mangKyTu[mangKyTu.length-1-i];
+            mangKyTu[mangKyTu.length-1-i] = tmp;
+        }
+        return String.valueOf(mangKyTu);
+    }
 }
 
 class SoMayMan {
