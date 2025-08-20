@@ -8,6 +8,5 @@ public class HelloFile {
         while (scanner.hasNextLine()) {
             System.out.println(scanner.nextLine());
         }
-        scanner.close();
     }
 }

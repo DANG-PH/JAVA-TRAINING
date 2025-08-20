@@ -68,6 +68,9 @@ class XetXau {
         }
         return sum;
     }
+    public String traVeXau() {
+        return xauCanXet;
+    }
 }
 
 class SoMayMan {
@@ -85,6 +88,17 @@ class SoMayMan {
             }
         }
         return true;
+    }
+    public boolean duCacKyTu(XetXau xau, char[] kytu) {
+        int[] so = new int[kytu.length];
+        for (int i = 0; i < kytu.length; i++) {
+            so[i] = xau.demKyTuTrongXau(kytu[i]);
+        }
+        int tong = 0;
+        for (int cacso : so) {
+            tong += cacso;
+        }
+        return (tong == xau.doDai());
     }
 }
 

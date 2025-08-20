@@ -7,17 +7,14 @@ public class J01001 {
         Scanner sc = new Scanner(System.in);
         if (!sc.hasNextLong()) {
             System.out.println(0);
-            sc.close();
             return;
         }
         long a = sc.nextLong();
         if (!sc.hasNextLong()) {
             System.out.println(0);
-            sc.close();
             return;
         }
         long b = sc.nextLong();
-        sc.close();
 
         if (a <= 0 || b <= 0) {
             System.out.println(0);
