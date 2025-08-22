@@ -22,6 +22,30 @@ class XetListSoNguyen {
         }
         return cacCap;
     }
+
+    public int tongTrai(int index) {
+        int tong = 0;
+        for (int i = 0; i < index; i++) tong += list.get(i);
+        return tong;
+    }
+
+    public int tongPhai(int index) {
+        int tong = 0;
+        for (int i = index + 1; i < list.size(); i++) tong += list.get(i);
+        return tong;
+    }
+
+    public List<Integer> getList() {
+        return list;
+    }
+
+    public int tongList() {
+        int tong = 0;
+        for (int x : list) {
+            tong += x;
+        }
+        return tong;
+    }
 }
 
 class SoLanXuatHienMotSo {

@@ -11,14 +11,14 @@ Output:
 Luồng xử lý (OOP):
 1. Main -> Gọi XuLyBaiToanJ01004
 2. XuLyBaiToan -> Đọc inputf
-3. XetSoNguyenTo -> Kiểm tra số nguyên tố
+3. SoNguyenTo -> Kiểm tra số nguyên tố
 4. XuLyBaiToan -> In kết quả
 */
 
-class XetSoNguyenTo {
+class SoNguyenTo {
     private int soCanTest;
 
-    public XetSoNguyenTo(int soCanTest) {
+    public SoNguyenTo(int soCanTest) {
         this.soCanTest = soCanTest;
     }
 
@@ -31,8 +31,24 @@ class XetSoNguyenTo {
         return true;
     }
 
-    public void inKetQua() {
-        System.out.println(isSoNguyenTo() ? "YES" : "NO");
+    public List<Integer> soNguyenToNhoHonBang_N() {
+        List<Integer> listSnt = new ArrayList<>();
+        for (int i = 0; i <= soCanTest; i++) {
+            if (isSoNguyenTo(i)) {
+                listSnt.add(i);
+            }
+        }
+        return listSnt;
+    }
+
+    //static
+    public static boolean isSoNguyenTo(int so) {
+        if (so <= 1) return false;
+        int sqrt = (int) Math.sqrt(so);
+        for (int i = 2; i <= sqrt; i++) {
+            if (so % i == 0) return false;
+        }
+        return true;
     }
 }
 
@@ -41,8 +57,8 @@ class XuLyBaiToanJ01004 {
         int boTest = sc.nextInt();
         for (int i = 0; i < boTest; i++) {
             int soCanTest = sc.nextInt();
-            XetSoNguyenTo xsnt = new XetSoNguyenTo(soCanTest);
-            xsnt.inKetQua();
+            SoNguyenTo xsnt = new SoNguyenTo(soCanTest);
+            System.out.println(xsnt.isSoNguyenTo() ? "YES" : "NO");
         }
     }
 }
