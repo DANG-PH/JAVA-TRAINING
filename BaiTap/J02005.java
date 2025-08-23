@@ -20,6 +20,12 @@ class XuLiHaiTap {
         hop.addAll(B);
         return hop;
     }
+
+    public Set<Integer> phanBuCuaA() {
+        Set<Integer> phanBu = new TreeSet<>(A);
+        phanBu.removeAll(B);
+        return phanBu;
+    }
 }
 
 class XuLyBaiToanJ02005 {

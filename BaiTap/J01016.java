@@ -105,6 +105,15 @@ class SoMayMan {
         }
         return true;
     }
+    public boolean coCapHieuBang(XetXau xau, int khoangCach) {
+        for (int i = 0; i < xau.doDai() - 1; i++) {
+            int hieu = Math.abs(xau.kyTuHienTai(i+1) - xau.kyTuHienTai(i));
+            if (hieu == khoangCach) {
+                return true;
+            }
+        }
+        return false;
+    }
     public boolean duCacKyTu(XetXau xau, char[] kytu) {
         int[] so = new int[kytu.length];
         for (int i = 0; i < kytu.length; i++) {

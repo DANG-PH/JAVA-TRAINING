@@ -46,6 +46,16 @@ class XetListSoNguyen {
         }
         return tong;
     }
+
+    public int maxList() {
+        int Max = list.get(0);
+        for (int x : list) {
+            if (Max < x) {
+                Max = x;
+            }
+        }
+        return Max;
+    }
 }
 
 class SoLanXuatHienMotSo {
