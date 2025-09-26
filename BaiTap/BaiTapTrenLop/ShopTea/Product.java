@@ -1,5 +1,4 @@
-package BaiTapTrenLop;
-import java.util.*;
+package BaiTapTrenLop.ShopTea;
 
 public class Product {
     private String name;

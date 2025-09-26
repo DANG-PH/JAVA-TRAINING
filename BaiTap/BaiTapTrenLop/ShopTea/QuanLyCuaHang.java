@@ -1,4 +1,5 @@
-package BaiTapTrenLop;
+package BaiTapTrenLop.ShopTea;
+
 import java.util.*;
 
 public class QuanLyCuaHang {

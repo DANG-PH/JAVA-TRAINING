@@ -1,4 +1,4 @@
-package BaiTapTrenLop;
+package BaiTapTrenLop.ShopTea;
 
 public enum LoaiPerson {
     NHANVIEN,

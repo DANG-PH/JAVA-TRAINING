@@ -1,4 +1,4 @@
-package BaiTapTrenLop;
+package BaiTapTrenLop.ShopTea;
 
 public class Customer {
     private String name;
