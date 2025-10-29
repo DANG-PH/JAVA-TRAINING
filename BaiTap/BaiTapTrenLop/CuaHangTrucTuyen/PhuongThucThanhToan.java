@@ -24,20 +24,10 @@ class ThanhToanViDienTu implements PhuongThucThanhToan {
 }
 
 class XetThanhToan {
-    public static void PhuongThuc(KhachHang khachHang,LoaiHinhThanhToan loaiHinhThanhToan,List<SanPham> listSanPham) {
+    public static void PhuongThuc(KhachHang khachHang,PhuongThucThanhToan phuongThucThanhToan,List<SanPham> listSanPham) {
         double tongTien = tinhTongTien(listSanPham);
         if (khachHang.getSoTien() >= tongTien) {
-            switch (loaiHinhThanhToan) {
-                case TIENMAT -> {
-                    new ThanhToanTienMat().thanhToan(tongTien);
-                }
-                case THETINDUNG -> {
-                    new ThanhToanTheTinDung().thanhToan(tongTien);
-                }
-                case VIDIENTU -> {
-                    new ThanhToanViDienTu().thanhToan(tongTien);
-                }
-            }
+            phuongThucThanhToan.thanhToan(tongTien);
             khachHang.setSoTien(khachHang.getSoTien()-tongTien);
         }
     }
